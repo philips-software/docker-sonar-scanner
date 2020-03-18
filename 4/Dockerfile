@@ -6,7 +6,15 @@ ENV SONAR_SCANNER_VERSION 4.3.0.2102-linux
 
 USER root
 
-RUN apk add --no-cache ca-certificates curl grep sed unzip
+RUN apt-get update && \
+    apt-get install -y \
+      python3-pip \
+      python-pip \
+      ca-certificates \
+      grep \
+      sed \
+      unzip && \
+    rm -rf /var/lib/apt/lists/*
 
 RUN pip install --upgrade pip
 RUN pip install -U setuptools
@@ -27,6 +35,9 @@ ENV PATH $PATH:/root/sonar-scanner-$SONAR_SCANNER_VERSION/bin
 
 #   ensure Sonar uses the provided Java for musl instead of a borked glibc one
 RUN sed -i 's/use_embedded_jre=true/use_embedded_jre=false/g' /root/sonar-scanner-$SONAR_SCANNER_VERSION/bin/sonar-scanner
+
+ADD REPO
+ADD TAGS
 
 # Use bash if you want to run the environment from inside the shell, otherwise use the command that actually runs the underlying stuff
 #CMD /bin/bash
