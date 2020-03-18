@@ -36,8 +36,8 @@ ENV PATH $PATH:/root/sonar-scanner-$SONAR_SCANNER_VERSION/bin
 #   ensure Sonar uses the provided Java for musl instead of a borked glibc one
 RUN sed -i 's/use_embedded_jre=true/use_embedded_jre=false/g' /root/sonar-scanner-$SONAR_SCANNER_VERSION/bin/sonar-scanner
 
-ADD REPO
-ADD TAGS
+ADD REPO .
+ADD TAGS .
 
 # Use bash if you want to run the environment from inside the shell, otherwise use the command that actually runs the underlying stuff
 #CMD /bin/bash

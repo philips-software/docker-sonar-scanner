@@ -4,7 +4,7 @@ name: build
 
 jobs:
   build_sonar_scanner:
-    name: Build sonar-scanner with java 
+    name: Build sonar-scanner
     runs-on: ubuntu-latest
 
     steps:
