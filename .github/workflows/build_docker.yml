@@ -11,10 +11,11 @@ jobs:
     - uses: actions/checkout@v2
 
     - name: Build sonar-scanner Docker Images
-      uses: philips-software/docker-ci-scripts@v1.0.1
+      uses: philips-software/docker-ci-scripts@v2.0.1
       with:
         dockerfile: 4 
-        tags: sonar-scanner sonar-scanner:4 sonar-scanner:4.3 sonar-scanner:4.3.0 sonar-scanner:4.3.0.2102 
+        image-name: sonar-scanner
+        tags: latest 4 4.3 4.3.0 4.3.0.2102 
       env:
         DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
         DOCKER_PASSWORD: '${{ secrets.DOCKER_PASSWORD }}'
