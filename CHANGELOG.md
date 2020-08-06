@@ -7,4 +7,5 @@ The version numbers are related to the version of sonar-scanner in the image app
 ## [Unreleased]
 
 ### Added
+- Add dependabot 
 - Add version 4.3.0.2102-linux 
