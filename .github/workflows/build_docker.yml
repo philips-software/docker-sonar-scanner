@@ -15,7 +15,7 @@ jobs:
       with:
         dockerfile: 4 
         image-name: sonar-scanner
-        tags: latest 4 4.3 4.3.0 4.3.0.2102 
+        tags: latest 4 4.4 4.4.0 4.4.0.2170
       env:
         DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
         DOCKER_PASSWORD: '${{ secrets.DOCKER_PASSWORD }}'

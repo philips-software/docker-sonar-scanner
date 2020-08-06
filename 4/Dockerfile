@@ -2,7 +2,7 @@ FROM philipssoftware/node:12-java
 
 LABEL maintainer="Jeroen Knoops <jeroen.knoops@philips.com>"
 
-ENV SONAR_SCANNER_VERSION 4.3.0.2102-linux
+ENV SONAR_SCANNER_VERSION 4.4.0.2170-linux
 
 USER root
 

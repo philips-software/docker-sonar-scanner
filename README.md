@@ -50,7 +50,7 @@ This contains all the similar tags at the point of creation.
 
 ```
 $ docker run philipssoftware/sonar-scanner:4 cat TAGS
-sonar-scanner sonar-scanner:4 sonar-scanner:4.3 sonar-scanner:4.3.0 sonar-scanner:4.3.0.2102 
+sonar-scanner sonar-scanner:4 sonar-scanner:4.4 sonar-scanner:4.4.0 sonar-scanner:4.4.0.2170
 ```
 
 You can use this to pin down a version of the container from an existing development build for production. When using `sonar-scanner:4` for development. This ensures that you've got all security updates in your build. If you want to pin the version of your image down for production, you can use this file inside of the container to look for the most specific tag, the last one.
@@ -58,7 +58,7 @@ You can use this to pin down a version of the container from an existing develop
 ## Simple Tags
 
 ### sonar-scanner
-- `sonar-scanner`, `sonar-scanner:4`, `sonar-scanner:4.3`, `sonar-scanner:4.3.0`, `sonar-scanner:4.3.0.21202` [4/Dockerfile](4/Dockerfile)
+- `sonar-scanner`, `sonar-scanner:4`, `sonar-scanner:4.4`, `sonar-scanner:4.4.0`, `sonar-scanner:4.4.0.2170` [4/Dockerfile](4/Dockerfile)
 
 ## Why
 
