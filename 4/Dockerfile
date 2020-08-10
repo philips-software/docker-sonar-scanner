@@ -1,4 +1,4 @@
-FROM philipssoftware/node:12-java
+FROM philipssoftware/node:13-java
 
 LABEL maintainer="Jeroen Knoops <jeroen.knoops@philips.com>"
 
