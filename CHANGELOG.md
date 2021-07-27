@@ -7,6 +7,7 @@ The version numbers are related to the version of sonar-scanner in the image app
 ## [Unreleased]
 
 ### Changed
+- Add version 4.6.2.2472-linux
 - Add version 4.4.0.2170-linux
 
 ### Added
