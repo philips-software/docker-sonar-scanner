@@ -19,6 +19,7 @@ RUN apt-get update && \
 RUN pip install --upgrade pip
 RUN pip install -U setuptools
 RUN pip install -U pylint
+RUN npm install -g typescript
 
 WORKDIR /root
 
@@ -29,6 +30,7 @@ RUN rm sonarscanner.zip
 
 ENV SONAR_RUNNER_HOME=/root/sonar-scanner-$SONAR_SCANNER_VERSION
 ENV PATH $PATH:/root/sonar-scanner-$SONAR_SCANNER_VERSION/bin
+ENV NODE_PATH=/usr/local/lib/node_modules
 
 # The config should be set in the project. See sonar-project.properties as example.
 # COPY sonar-project.properties ./sonar-scanner-$SONAR_SCANNER_VERSION/conf/sonar-scanner.properties
