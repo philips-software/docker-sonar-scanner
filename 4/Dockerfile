@@ -13,6 +13,7 @@ RUN apt-get update && \
       ca-certificates \
       grep \
       sed \
+      shellcheck \
       unzip && \
     rm -rf /var/lib/apt/lists/*
 
