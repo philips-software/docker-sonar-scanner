@@ -38,8 +38,21 @@ ENV NODE_PATH=/usr/local/lib/node_modules
 #   ensure Sonar uses the provided Java for musl instead of a borked glibc one
 RUN sed -i 's/use_embedded_jre=true/use_embedded_jre=false/g' /root/sonar-scanner-$SONAR_SCANNER_VERSION/bin/sonar-scanner
 
-ADD REPO .
-ADD TAGS .
+ADD REPO TAGS /root/
+
+RUN echo "\
+----------------------------------------------------------------------------------------------\n\
+TAGS: $(cat /TAGS)\n\
+REPO: $(cat /REPO)\n\
+----------------------------------------------------------------------------------------------\n\
+SONARSCANNER: $(sonar-scanner --version)\n\
+----------------------------------------------------------------------------------------------\n\
+PYTHON: $(python --version 2>&1)\n\
+PYTHON3: $(python3 --version)\n\
+NODE: $(node --version)\n\
+JAVA: $(java -version 2>&1 | head -n 1 | awk -F '"' '{print $2}')\n\
+----------------------------------------------------------------------------------------------"\
+    > /etc/motd
 
 # Use bash if you want to run the environment from inside the shell, otherwise use the command that actually runs the underlying stuff
 #CMD /bin/bash
