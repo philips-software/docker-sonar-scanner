@@ -20,7 +20,7 @@ RUN apt-get update && \
 RUN pip install --upgrade pip
 RUN pip install -U setuptools
 RUN pip install -U pylint
-RUN npm install -g typescript
+RUN npm install -g typescript@">=3.2.1 <3.8.0"
 
 WORKDIR /root
 
