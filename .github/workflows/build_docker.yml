@@ -16,8 +16,13 @@ jobs:
         dockerfile: 4 
         image-name: sonar-scanner
         tags: latest 4 4.6 4.6.2 4.6.2.2472
+        slsa-provenance: true
+        sign: true
       env:
         DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
         DOCKER_PASSWORD: '${{ secrets.DOCKER_PASSWORD }}'
         DOCKER_ORGANIZATION: philipssoftware
         GITHUB_ORGANIZATION: philips-software
+        COSIGN_PRIVATE_KEY: '${{ secrets.COSIGN_PRIVATE_KEY }}'
+        COSIGN_PASSWORD: '${{ secrets.COSIGN_PASSWORD }}'
+        COSIGN_PUBLIC_KEY: '${{ secrets.COSIGN_PUBLIC_KEY }}'
