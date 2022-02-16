@@ -18,6 +18,7 @@ jobs:
         tags: latest 4 4.6 4.6.2 4.6.2.2472
         slsa-provenance: true
         sign: true
+        sbom: true
       env:
         DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
         DOCKER_PASSWORD: '${{ secrets.DOCKER_PASSWORD }}'
