@@ -15,7 +15,7 @@ jobs:
       with:
         dockerfile: 4 
         image-name: sonar-scanner
-        tags: latest 4 4.6 4.6.2 4.6.2.2472
+        tags: latest 4 4.7 4.7.0 4.7.0.2747
         slsa-provenance: true
         sign: true
         sbom: true
