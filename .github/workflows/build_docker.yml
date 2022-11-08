@@ -7,11 +7,14 @@ jobs:
     name: Build sonar-scanner
     runs-on: ubuntu-latest
 
+    permissions:
+      id-token: write
+      
     steps:
     - uses: actions/checkout@v3
 
     - name: Build sonar-scanner Docker Images
-      uses: philips-software/docker-ci-scripts@v4.5.3
+      uses: philips-software/docker-ci-scripts@v5.0.0
       with:
         dockerfile: 4 
         image-name: sonar-scanner
@@ -20,10 +23,8 @@ jobs:
         sign: true
         sbom: true
       env:
-        DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
-        DOCKER_PASSWORD: '${{ secrets.DOCKER_PASSWORD }}'
+        REGISTRY_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+        REGISTRY_TOKEN: '${{ secrets.DOCKER_PASSWORD }}'
         DOCKER_ORGANIZATION: philipssoftware
         GITHUB_ORGANIZATION: philips-software
-        COSIGN_PRIVATE_KEY: '${{ secrets.COSIGN_PRIVATE_KEY }}'
-        COSIGN_PASSWORD: '${{ secrets.COSIGN_PASSWORD }}'
-        COSIGN_PUBLIC_KEY: '${{ secrets.COSIGN_PUBLIC_KEY }}'
+        KEYLESS: true
