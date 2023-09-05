@@ -11,7 +11,7 @@ jobs:
       id-token: write
       
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
 
     - name: Build sonar-scanner Docker Images
       uses: philips-software/docker-ci-scripts@d0045b844f08b0dcb4c62bd4acf6c36877404dae # v5.1.0
