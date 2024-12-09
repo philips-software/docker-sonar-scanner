@@ -1,6 +1,8 @@
 [![Build Status](https://github.com/philips-software/docker-sonar-scanner/workflows/build/badge.svg)](https://github.com/philips-software/docker-sonar-scanner/actions/)
 [![Slack](https://philips-software-slackin.now.sh/badge.svg)](https://philips-software-slackin.now.sh)
 
+> ⚠️ This repository is no longer used. Please use nix to provision your builds.
+   
 # Docker images
 
 This repo will contain docker images with the [Sonar Scanner](https://docs.sonarqube.org/latest/analysis/scan/sonarscanner/)
